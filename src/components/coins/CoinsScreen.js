@@ -1,4 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
+
+
+import SplashScreen from 'react-native-splash-screen';
+
 import { View, FlatList, ActivityIndicator, Text, StyleSheet } from 'react-native';
 import Http from 'cryptoGo/src/libs/http';
 import CoinsItem from './CoinsItem';
@@ -16,7 +20,7 @@ class CoinsScreen extends Component {
   componentDidMount = () => {
 
     this.getCoins();
-
+    SplashScreen.hide();
   }
 
   getCoins = async () => {
@@ -99,5 +103,9 @@ const styles = StyleSheet.create({
     marginTop: 60
   }
 });
+
+
+
+
 
 export default CoinsScreen
